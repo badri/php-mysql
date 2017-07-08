@@ -4,4 +4,7 @@ php:
         name: nginx
     interpretor:
         name: fpm
+        options:
+          extensions:
+            - php-mysql
     composer: true
