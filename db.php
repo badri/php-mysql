@@ -17,18 +17,19 @@
 -->
 
 <?php
-if(!array_filter([$_ENV["MYSQL_HOST"], $_ENV["MYSQL_DATABASE"], $_ENV["MYSQL_PORT"], $_ENV["MYSQL_USER"], $_ENV["MYSQL_ROOT_PASSWORD"]]) {
+if(!array_filter([getenv("MYSQL_HOST"), getenv("MYSQL_DATABASE"), getenv("MYSQL_PORT"), getenv("MYSQL_USER"), getenv("MYSQL_ROOT_PASSWORD")])) {
   echo "Error: No suitable MySQL database bound to the application. <br>";
   die();
 } else {
-  $mysql_database = $_ENV["MYSQL_DATABASE"];
-  $mysql_server_name =$_ENV["MYSQL_HOST"] . ':' . $_ENV["MYSQL_PORT"];
-  $mysql_username = $_ENV["MYSQL_USER"];
-  $mysql_password = $_ENV["MYSQL_ROOT_PASSWORD"];
+  $mysql_database = getenv("MYSQL_DATABASE");
+  $mysql_server_name =getenv("MYSQL_HOST");
+  $mysql_username = getenv("MYSQL_USER");
+  $mysql_password = getenv("MYSQL_ROOT_PASSWORD");
+  $mysql_port = getenv("MYSQL_PORT");
 }
 
 
-$mysqli = new mysqli($mysql_server_name, $mysql_username, $mysql_password, $mysql_database);
+$mysqli = new mysqli($mysql_server_name, $mysql_username, $mysql_password, $mysql_database, $mysql_port);
 if ($mysqli->connect_errno) {
     echo "Failed to connect to MySQL: (" . $mysqli->connect_errno . ") " . $mysqli->connect_error;
     die();
