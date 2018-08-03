@@ -25,6 +25,7 @@ $mysql_port = getenv("MYSQL_PORT");
 
 $mysqli = new mysqli($mysql_server_name, $mysql_username, $mysql_password, $mysql_database, $mysql_port);
 if ($mysqli->connect_errno) {
+    print_r($mysqli->connect_errno);
     echo "Failed to connect to MySQL: (" . $mysqli->connect_errno . ") " . $mysqli->connect_error;
     die();
 }
