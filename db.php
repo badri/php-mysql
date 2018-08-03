@@ -19,7 +19,7 @@
 $mysql_database = getenv("MYSQL_DATABASE");
 $mysql_server_name =getenv("MYSQL_HOST");
 $mysql_username = getenv("MYSQL_USER");
-$mysql_password = getenv("MYSQL_ROOT_PASSWORD");
+$mysql_password = getenv("MYSQL_PASSWORD");
 $mysql_port = getenv("MYSQL_PORT");
 
 
