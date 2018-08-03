@@ -15,7 +15,7 @@
 * limitations under the License.
 */
 -->
-
+<?php
 $mysql_database = getenv("MYSQL_DATABASE");
 $mysql_server_name =getenv("MYSQL_HOST");
 $mysql_username = getenv("MYSQL_USER");
